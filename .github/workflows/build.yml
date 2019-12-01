@@ -17,4 +17,6 @@ jobs:
     - name: make
       run: make
     - name: make-jpeg
-      run: make JPEG=1
+      run: |
+        make clean
+        make JPEG=1
