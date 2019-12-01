@@ -1,0 +1,19 @@
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: prepare
+      run: |
+        sudo apt install -y odb
+        ./scripts/grab_deps_linux.sh 
+    - name: make
+      run: make
+    - name: make-jpeg
+      run: make JPEG=1
