@@ -11,7 +11,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: prepare
       run: |
-        sudo apt install -y odb
+        sudo apt-get update
+        sudo apt-get install -y odb
         ./scripts/grab_deps_linux.sh 
     - name: make
       run: make
